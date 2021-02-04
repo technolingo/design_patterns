@@ -1,3 +1,9 @@
+"""
+The strategy pattern achieves a separation of common and specific functionalities of a feature
+implementation via composition. c.f. The template method achieves this through inheritance.
+"""
+
+
 from abc import ABC, abstractmethod
 from enum import Enum, auto
 
@@ -8,6 +14,9 @@ class OutputFormat(Enum):
 
 
 class ListStrategy(ABC):
+    """
+    An abstract interface that clarifies how to interact with concrete strategies
+    """
 
     def start(self, buffer): pass
 
@@ -36,6 +45,9 @@ class HTMLListStrategy(ListStrategy):
 
 
 class TextProcessor:
+    """
+    A text processor that produces different output based on the underlying strategy used.
+    """
 
     def __init__(self, list_strategy=HTMLListStrategy()):
         self.list_strategy = list_strategy
