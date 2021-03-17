@@ -1,7 +1,6 @@
-
 class BankAccountSnapshot:
     """
-    A momento token class that captures a snapshot of a bank account's state.
+    A memento token class that captures a snapshot of a bank account's state.
     """
 
     def __init__(self, balance):
